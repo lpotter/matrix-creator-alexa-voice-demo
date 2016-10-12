@@ -10,3 +10,6 @@ set_property(TARGET micarray_dump PROPERTY CXX_STANDARD 11)
 target_link_libraries(micarray_dump matrix_creator_hal)
 target_link_libraries(micarray_dump ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(micarray_dump wiringPi)
+
+install (TARGETS micarray_dump DESTINATION bin/micarray/build)
+
