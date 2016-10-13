@@ -93,7 +93,7 @@ def alexa():
         with open(path + "response.mp3", 'wb') as f:
             f.write(audio)
         os.system(
-            'mpg123 -q {}1sec.mp3 {}response.mp3'.format(path + "/assets/", path))
+            'mpg123.bin -q {}1sec.mp3 {}response.mp3'.format(path + "/assets/", path))
     else:
         print "requests returned r.status_code = %r" % r.status_code
 
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     while internet_on() == False:
         print "."
     token = gettoken()
-    os.system('mpg123 -q {}1sec.mp3 {}hello.mp3'.format(path +
+    os.system('mpg123.bin -q {}1sec.mp3 {}hello.mp3'.format(path +
                                                         "/assets/", path + "/assets/"))
     while True:
         subprocess.Popen(['gpio','edge','16','both'])
